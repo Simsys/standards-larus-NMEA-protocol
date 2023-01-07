@@ -6,7 +6,7 @@ This document describes the LARUS serial port protocol.
 
 ## Specification
 
-The Larus Flight Information Sensor System for Gliders providing essential information for glider navigation like
+The Larus Flight Information Sensor System for Gliders provides essential information for glider navigation like
 
 - position,
 - attitude and heading AHRS,
@@ -14,9 +14,9 @@ The Larus Flight Information Sensor System for Gliders providing essential infor
 - real-time wind measurement,
 - air-density measurement
 
-For the position, regular NMEA 0183 sentences are used. Information regarding pressure measurements and voltage measurements are send using the OpenVario protocol as published on https://github.com/Turbo87/openvario-protocol.
+For the GNSS position, regular NMEA 0183 sentences are used. Information regarding pressure measurements and voltage measurements are send using the OpenVario protocol as published on https://github.com/Turbo87/openvario-protocol.
 
-For the attitude and wind information, a separate protocol has been defined as it is not (yet) supported by the OpenVario protocol. The LARUS serial port protocol is built around the `$PLARx` NMEA sentence. The `x` is either a `W` when wind information is being sent, or is an `A` when attitude information is shown.
+For the attitude and wind information, a separate protocol has been defined as it is not (yet) supported by the OpenVario protocol. This LARUS serial port protocol is built around the `$PLARx` NMEA sentence. The `x` is either a `W` when wind information is being sent, or is an `A` when attitude information is shown.
 
 ## Available sentences
 
