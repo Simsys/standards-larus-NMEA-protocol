@@ -16,7 +16,7 @@ The Larus Flight Information Sensor System for Gliders provides essential inform
 
 For the GNSS position, regular NMEA 0183 sentences are used. Information regarding pressure measurements and voltage measurements are send using the OpenVario protocol as published on https://github.com/Turbo87/openvario-protocol.
 
-For the attitude, wind, and air density information, a separate protocol has been defined as it is not (yet) supported by the OpenVario protocol. This LARUS serial port protocol is built around the `$PLARx` NMEA sentence. The `x` is a `W` when wind information is being sent, `A` when attitude information is shown and `D` for the ratio of observed air density divided by the ICAO standard air density at the current altitude.
+For the attitude, wind, and air density information, a separate protocol has been defined as it is not (yet) supported by the OpenVario protocol. This LARUS serial port protocol is built around the `$PLARx` NMEA sentence. The `x` is a `W` when wind information is being sent, `A` when attitude information is shown and `D` for the instant air density.
 
 ## Available sentences
 
@@ -51,14 +51,15 @@ This sentence gives information about the current attitude. The different fields
 
 ### Observed density
 
-           1   2
-           |   |  
-    $PLARD,x.x*hh<CR><LF>
+           1   2 3
+           |   | |  
+    $PLARD,x.x,a*hh<CR><LF>
 
-This sentence gives information about the observed air density. The different fields have the following meaning:
+This sentence gives information about the instant air density at the current altitude. The different fields have the following meaning:
 
-  1) Observed air density divided by the ICAO standard air density at the same altitude.
-  2) Checksum
+  1) Instant air density in g/m3.
+  2) (M)easured or (E)stimated
+  3) Checksum
 
 ## Checksum
 
