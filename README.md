@@ -24,7 +24,7 @@ For the GNSS position, regular NMEA 0183 sentences are used. Information regardi
 
 For the attitude, wind, and air density information, a separate protocol has been defined as it is not (yet) supported by the OpenVario protocol. This LARUS serial port protocol is built around the `$PLARx` NMEA sentence. The `x` is a `W` when wind information is being sent, `A` when attitude information is shown and `D` for the instant air density.
 
-## Available sentences
+## Propietary Larus NMEA sentences
 
 ### Wind
 
