@@ -8,7 +8,7 @@ computers for gliders. Therefore the protocols need to be
 extended to be able to transfer new messages.
 
 Because of the best fit we have decided to extend the
-existing OpenVario driver.
+existing XCsoar OpenVario driver.
 
 ## Specification
 
