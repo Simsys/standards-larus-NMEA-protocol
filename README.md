@@ -20,9 +20,16 @@ The Larus Flight Information Sensor System for Gliders provides essential inform
 - Real-time wind measurement
 - Air-density measurement
 
-For the GNSS position, regular NMEA 0183 sentences are used. Information regarding pressure measurements and voltage measurements are send using the OpenVario protocol as published on https://github.com/Turbo87/openvario-protocol.
+For the GNSS position, regular NMEA 0183 sentences are used. 
 
-For the attitude, wind, and air density information, a separate protocol has been defined as it is not (yet) supported by the OpenVario protocol. This LARUS serial port protocol is built around the `$PLARx` NMEA sentence. The `x` is a `W` when wind information is being sent, `A` when attitude information is shown and `D` for the instant air density.
+For the aircraft attitude, wind, and air density information, a separate protocol has been defined. 
+This LARUS serial port protocol is built around the `$PLARx` NMEA sentence. 
+The `x` is 
+
+  1) `W` when wind information is being sent
+  2) `A` when attitude information is sent
+  3) `D` for the instant air density
+  4) `B` For battery voltage
 
 ## Propietary Larus NMEA sentences
 
@@ -67,6 +74,10 @@ This sentence gives information about the instant air density at the current alt
   2) a = (M)easured or (E)stimated
   3) Checksum
 
+### Battery Voltage
+
+    $PLARB,xx.xx*hh<CR><LF>
+    
 ## Checksum
 
 The checksum is the standard NMEA checksum. It is calculated over the NMEA string between `$` and `*`. The checksum is a hexadecimal number representing the XOR of all bytes.
