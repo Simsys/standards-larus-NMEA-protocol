@@ -62,7 +62,7 @@ This sentence gives information about the current attitude. The different fields
   3) Yaw angle (true heading)
   4) Checksum
 
-### Observed density
+### Instant air density
 
            1   2 3
            |   | |  
